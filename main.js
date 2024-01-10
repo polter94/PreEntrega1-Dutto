@@ -1,18 +1,20 @@
 //variables
-let producto=0; //se define 0 en caso de que el usuario presione continuar sin ingresar valor en funcion elegirProducto
+let producto=0;
 let valor=0;
+let cuotas=0;
 
 //funciones
 function elegirProducto(){
-    let producto = prompt("1.Monitor \n 2.Teclado \n 3.Mouse \n 4.Placa de video \n 5.Procesador");
-    while(producto < 1 || producto > 5){
+    let seleccionUsuario = prompt("1.Monitor \n 2.Teclado \n 3.Mouse \n 4.Placa de video \n 5.Procesador");
+    producto = seleccionUsuario;
+    while(seleccionUsuario < 1 || seleccionUsuario > 5){
         alert("Por favor elija un producto de la lista")
-        producto = prompt("1.Monitor \n 2.Teclado \n 3.Mouse \n 4.Placa de video \n 5.Procesador")
+        seleccionUsuario = prompt("1.Monitor \n 2.Teclado \n 3.Mouse \n 4.Placa de video \n 5.Procesador")
+        producto = seleccionUsuario;
     }
 }
 
-function asignarValor(producto){
-    let valor=0;
+function asignarValor(){
 
     if(producto==1){
         valor=65000;
@@ -30,22 +32,31 @@ function asignarValor(producto){
         valor=170000;
     }
 
-    alert("el costo es ", +valor);
+    alert("el costo es " + valor);
 }
 
-// function calcularCFT(cuotas) {
-//     if (coutas == 1){
-//         alert("Abonar en efectivo le bonifica un 21%, su valor a pagar sera: ", ());
-//     }
-//     if (coutas == 3){
-//         alert("El precio de su cuota sera", (${couta}/3)*1.5);
-//     }
-//     if (coutas == 6){
-//         alert("El precio de su cuota sera", (${couta}/6)*1.75);
-//     }
-// else
-// }
+function calcularCFT() {
+
+    cuotas = prompt("Elija el numero de cuotas en las que quiere abonar (1, 3 o 6 cuotas)");
+    // while(cuotas !== 1 || cuotas !== 3 || cuotas !== 6){
+    //     cuotas = prompt("Elija el numero de cuotas en las que quiere abonar (1, 3 o 6 cuotas)");
+    // }
+
+    if (cuotas == 1){
+        valorCuota = valor*0.79;
+        alert("Abonar en efectivo le bonifica un 21%, su valor a pagar sera: " + valorCuota);
+    }
+    else if (cuotas == 3){
+        valorCuota = valor*1.5;
+        alert("El precio de su cuota sera: " + valorCuota + " (CFT 150%)");
+    }
+    else if (cuotas == 6){
+        valorCuota = valor*1.65;
+        alert("El precio de su cuota sera: " + valorCuota + " (CFT 165%)");
+    }
+}
 
 alert ("Bienvenido, por favor seleccione el producto que desea comprar")
 elegirProducto();
-asignarValor(producto);
+asignarValor();
+calcularCFT();
