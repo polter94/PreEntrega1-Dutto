@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Hikari Diseños - VGB</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="cont-header">
+            <a href="#"><img src="./img/1.png" alt="logo del negocio"></a>
+            <h1>Hikari Diseños</h1>
+
+            <div class="cont-botones">
+                <button id="btnNosotros" class="btnNav nosotros">Nosotros</button>
+                <button id="btnRedes" class="btnNav redesSociales">Redes Sociales</button>
+                <button id="btnCarrito" class="btnNav expandir" onclick="colapsar()">Abrir carrito</button>
+            </div>
+        </div>
+    </header>
+
+
+    <div id="contenedorColapsable" class="cont-general-abierto">
+
+        <!-- lista de productos rellenado por JS -->
+        <div class="cont-tienda" id="listaProd"></div>
+
+        <!-- carrito rellenado por JS -->
+        <div id="carrito" class="carrito-cerrado"></div>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
