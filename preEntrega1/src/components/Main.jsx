@@ -1,5 +1,6 @@
 import Hero from "./Hero";
 import Texto from "./Texto";
+import Boton from "./Boton";
 import { useState } from "react";
 
 function Main() {
@@ -9,11 +10,8 @@ function Main() {
     <>
       <h2>Main</h2>
       <Hero />
-      <button onClick={() => setContador(contador+1)}>+1</button>
-      <button onClick={() => setContador(contador+5)}>+5</button>
-      <button onClick={() => setContador(contador-1)}>-1</button>
-      <button onClick={() => setContador(contador-5)}>-5</button>
-      <p>{contador}</p>
+
+      <Boton contador={contador} setContador={setContador}/>
 
       <button onClick={() => setTexto("Bienvenidos a la tienda?")}>Mostrar mensaje</button>
       <Texto texto={texto}/>
