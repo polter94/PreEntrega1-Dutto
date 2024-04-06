@@ -1,7 +1,10 @@
-
+import Social from "./Social";
 function Footer() {
   return (
-    <div>Footer</div>
+    <>
+        <h2>Footer</h2>
+    <Social />
+    </>
   )
 }
 

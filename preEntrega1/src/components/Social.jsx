@@ -1,7 +1,7 @@
 
 function Social() {
   return (
-    <div>Social</div>
+    <p>Social</p>
   )
 }
 
